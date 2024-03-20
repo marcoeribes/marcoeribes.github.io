@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-50 dark:bg-gray-800 text-gray-900 font-black">
+<html lang="en" class="font-mono bg-white text-black dark:bg-stone-950 dark:text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,59 +8,113 @@
     <title>Marco Eribes</title>
   </head>
   <body
-    class="border border-stone-950 w-full md:max-w-4xl lg:max-w-6xl mx-auto px-8 flex flex-col h-screen"
+    class="w-full lg:max-w-4xl mx-auto px-8 flex flex-col h-screen border border-t-0 border-b-0" 
   >
-    <header class="flex border border-stone-950 mt-4 mb-20 justify-between">
+    <header
+      class="flex flex-row mt-4 mb-20 justify-between"
+    >
       <img src="assets/logo.png" alt="me" class="size-20" />
-      <nav class="flex">
+      <nav
+        class="flex flex-row basis-1/2 gap-10 items-center justify-end"
+      >
+        <div class="flex flex-row-reverse gap-2 items-center">
+          <img
+            src="assets/english.png"
+            alt="English"
+            style="cursor: pointer"
+            class="size-6"
+          />
+          <h3>English</h3>
+        </div>
+        <div class="flex flex-row-reverse gap-2 items-center">
+          <img
+            src="assets/spanish.png"
+            alt="Español"
+            style="cursor: pointer"
+            class="size-6"
+          />
+          <h3>Español</h3>
+        </div>
         <img
-          src="assets/english.png"
-          alt="English"
-          style="cursor: pointer"
-          class="size-12"
-        />
-        <img
-          src="assets/sun.png"
+          src="assets/sun.svg"
           alt="Sun Image"
           id="toggleDarkMode"
           style="cursor: pointer"
-          class="size-12"
+          class="size-8"
         />
       </nav>
     </header>
-    <main>
-      <section class="border border-stone-950">
-        <h1>About Me</h1>
+    <main
+      class="flex flex-auto flex-col justify-items-centers gap-10 "
+    >
+      <section class="flex-auto">
         <p>Hello World, I'm Marco</p>
-        <p>
-          I am a full stack software engineer who gets the right tools for the
-          job
+        <p>I design and build apps</p>
+        <p>Desert dwelling software engineer who designs and builds apps</p>
+        <p>For fun, I love the outdoors like hiking, fishing, and running</p>
+          
         </p>
       </section>
-      <section>
-        <h2 class="text-2xl">Find Me</h2>
-        <ul class="flex justify-evenly border border-stone-950">
-          <li class="flex flex-col-reverse">
+      <section class="flex-auto">
+        <h2 class="text-2xl">Contact Me</h2>
+        <ul class="flex justify-evenly">
+          <li class="flex flex-col-reverse items-center">
             <p>Github</p>
+            <div class="w-16 h-16 rounded-full bg-white p-2 flex justify-center items-center">
+
             <img
               src="assets/github_logo.png"
               alt="Github"
-              class="size-16 object-contain drop-shadow-lg"
+              class="size-16 object-contain drop-shadow-lg hover:brightness-75 dark:hover:brightness-125"
             />
+            </div>
           </li>
-          <li class="flex flex-col-reverse">
+          <li class="flex flex-col-reverse items-center">
             <p>LinkedIn</p>
             <img
-              src="assets/linkedin_logo.png"
+              src="assets/linkedin_logo.svg"
               alt="LinkedIn"
-              class="size-16 object-contain drop-shadow-xl"
+              class="size-16 object-contain drop-shadow-xl hover:brightness-75 dark:hover:brightness-125"
+            />
+          </li>
+          <li class="flex flex-col-reverse items-center">
+            <p>LinkedIn</p>
+            <img
+              src="assets/Email-icon.png"
+              alt="Email"
+              class="size-16 object-contain drop-shadow-xl hover:brightness-75 dark:hover:brightness-125"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <section class="flex-auto">
+        <h2 class="text-2xl">Projects</h2>
+        <ul class="flex justify-evenly ">
+          <li class="flex flex-col-reverse items-center">
+            <p>Lightout</p>
+            <div class="w-16 h-16 rounded-full bg-yellow-300 p-2 flex justify-center items-center">
+
+            <img
+              src="assets/lightout_logo.png"
+              alt="Lightout Logo"
+              class="size-16 object-contain drop-shadow-lg hover:brightness-75 dark:hover:brightness-125"
+            />
+            </div>
+          </li>
+          <li class="flex flex-col-reverse items-center">
+            <p>Cook 'n' Collab</p>
+            <img
+              src="assets/cookncollab_logo.png"
+              alt="Cook 'n' Collab Logo"
+              class="size-16 object-contain drop-shadow-xl hover:brightness-75 dark:hover:brightness-125"
             />
           </li>
         </ul>
       </section>
     </main>
-    <footer>
-      <h2>Curious about how I made this site? source</h2>
+    <footer class=" mt-20 mb-8 text-center">
+      <h2>Curious about how I made this site? <a href="https://github.com/marcoeribes/marcoeribes.github.io">source</a></h2>
     </footer>
   </body>
   <script src="scripts/darkmode.js" defer></script>

@@ -5,10 +5,10 @@ function toggleDarkMode() {
 
   const image = document.getElementById("toggleDarkMode");
   if (isDarkMode) {
-    image.src = "assets/moon.png"; // Path to moon image
+    image.src = "assets/moon.svg"; // Path to moon image
     image.alt = "Moon Image";
   } else {
-    image.src = "assets/sun.png"; // Path to sun image
+    image.src = "assets/sun.svg"; // Path to sun image
     image.alt = "Sun Image";
   }
 }
@@ -20,7 +20,7 @@ window.onload = () => {
   }
 
   const image = document.getElementById("toggleDarkMode");
-  image.src = isDarkModeEnabled ? "assets/moon.png" : "assets/sun.png"; // Set initial image based on dark mode
+  image.src = isDarkModeEnabled ? "assets/moon.svg" : "assets/sun.svg"; // Set initial image based on dark mode
   image.alt = isDarkModeEnabled ? "Moon Image" : "Sun Image";
 
   image.addEventListener("click", toggleDarkMode);

@@ -3,7 +3,11 @@ module.exports = {
   darkMode: "selector",
   content: ["../**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        oxygen: ["Be Vietnam Pro", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

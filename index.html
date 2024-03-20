@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="font-mono bg-white text-black dark:bg-stone-950 dark:text-white">
+<html lang="en" class="font-be-vietnam-pro bg-white text-black dark:bg-stone-600 dark:text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/logo.png" type="image/x-icon" />
     <link href="tailwind/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+
     <title>Marco Eribes</title>
   </head>
   <body
@@ -17,26 +20,8 @@
       <nav
         class="flex flex-row basis-1/2 gap-10 items-center justify-end"
       >
-        <div class="flex flex-row-reverse gap-2 items-center">
-          <img
-            src="assets/english.png"
-            alt="English"
-            style="cursor: pointer"
-            class="size-6"
-          />
-          <h3>English</h3>
-        </div>
-        <div class="flex flex-row-reverse gap-2 items-center">
-          <img
-            src="assets/spanish.png"
-            alt="Español"
-            style="cursor: pointer"
-            class="size-6"
-          />
-          <h3>Español</h3>
-        </div>
         <img
-          src="assets/sun.svg"
+          src="assets/darkmode/sun.svg"
           alt="Sun Image"
           id="toggleDarkMode"
           style="cursor: pointer"
@@ -47,17 +32,34 @@
     <main
       class="flex flex-auto flex-col justify-items-centers gap-10 "
     >
+    
       <section class="flex-auto">
-        <p>Hello World, I'm Marco</p>
-        <p>I design and build apps</p>
+        <p id="intro">Hello World, I'm Marco</p>
+        <p id="bio">I design and build apps</p>
         <p>Desert dwelling software engineer who designs and builds apps</p>
         <p>For fun, I love the outdoors like hiking, fishing, and running</p>
           
         </p>
+        <p>Contact me via</p>
+        <li class="flex items-center justify-center border">
+          <ul class="w-10 h-10 flex justify-center items-center border">
+            <img class="size-8 fill-current text-black dark:text-white" src="assets/email.svg" alt="email">  
+          </ul>
+          <ul class="w-10 h-10 flex justify-center items-center border">
+            <img src="assets/linkedin_logo.svg" alt="LinkedIn">
+          </ul>
+          <ul class="w-10 h-10 flex justify-center items-center border">
+            <a class="">
+              <img src="assets/github_logo.svg" alt="Github">
+            </a>
+          </ul>
+        </li>
       </section>
-      <section class="flex-auto">
-        <h2 class="text-2xl">Contact Me</h2>
-        <ul class="flex justify-evenly">
+
+      <section class="flex-auto flex-col">
+        <h2 class="text-2xl">Projects</h2>
+        
+        <ul class="flex justify-evenly mt-6">
           <li class="flex flex-col-reverse items-center">
             <p>Github</p>
             <div class="w-16 h-16 rounded-full bg-white p-2 flex justify-center items-center">
@@ -65,57 +67,63 @@
             <img
               src="assets/github_logo.png"
               alt="Github"
-              class="size-16 object-contain drop-shadow-lg hover:brightness-75 dark:hover:brightness-125"
+              class="size-16 object-contain drop-shadow-lg hover:brightness-75"
             />
             </div>
           </li>
           <li class="flex flex-col-reverse items-center">
-            <p>LinkedIn</p>
-            <img
-              src="assets/linkedin_logo.svg"
-              alt="LinkedIn"
-              class="size-16 object-contain drop-shadow-xl hover:brightness-75 dark:hover:brightness-125"
-            />
-          </li>
-          <li class="flex flex-col-reverse items-center">
-            <p>LinkedIn</p>
-            <img
-              src="assets/Email-icon.png"
-              alt="Email"
-              class="size-16 object-contain drop-shadow-xl hover:brightness-75 dark:hover:brightness-125"
-            />
-          </li>
-        </ul>
-      </section>
-
-      <section class="flex-auto">
-        <h2 class="text-2xl">Projects</h2>
-        <ul class="flex justify-evenly ">
-          <li class="flex flex-col-reverse items-center">
             <p>Lightout</p>
-            <div class="w-16 h-16 rounded-full bg-yellow-300 p-2 flex justify-center items-center">
+            <div class="w-16 h-16 rounded-full dark:bg-white p-2 flex justify-center items-center">
 
             <img
               src="assets/lightout_logo.png"
               alt="Lightout Logo"
-              class="size-16 object-contain drop-shadow-lg hover:brightness-75 dark:hover:brightness-125"
+              class="size-16 object-contain drop-shadow-lg hover:brightness-75"
             />
             </div>
           </li>
           <li class="flex flex-col-reverse items-center">
             <p>Cook 'n' Collab</p>
+            <div class="w-16 h-16 rounded-full dark:bg-white p-2 flex justify-center items-center">
+
             <img
               src="assets/cookncollab_logo.png"
               alt="Cook 'n' Collab Logo"
-              class="size-16 object-contain drop-shadow-xl hover:brightness-75 dark:hover:brightness-125"
+              class="size-16 object-contain drop-shadow-xl hover:brightness-75"
             />
+            </div>
           </li>
         </ul>
       </section>
     </main>
-    <footer class=" mt-20 mb-8 text-center">
+    <footer class="flex flex-col gap-8 mt-20 mb-8 text-center">
       <h2>Curious about how I made this site? <a href="https://github.com/marcoeribes/marcoeribes.github.io">source</a></h2>
+      <nav
+      class="flex flex-row basis-1/2 gap-10 items-center justify-center"
+    >
+    
+      <div id="english-lang" class="flex flex-row-reverse gap-2 items-center language-selector">
+        <img
+          src="assets/international/english.png"
+          alt="English"
+          style="cursor: pointer"
+          class="size-6"
+        />
+        <h3>English</h3>
+      </div>
+      <div id="spanish-lang" class="flex flex-row-reverse gap-2 items-center language-selector">
+        <img
+          src="assets/international/spanish.png"
+          alt="Español"
+          style="cursor: pointer"
+          class="size-6"
+        />
+        <h3>Español</h3>
+      </div>
+      </nav>
     </footer>
+    
   </body>
   <script src="scripts/darkmode.js" defer></script>
+  <script src="scripts/translate.js" defer></script>
 </html>

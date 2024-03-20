@@ -1,38 +1,118 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  class="h-screen text-gray-900 bg-gray-100 font-black flex justify-center"
->
+<html lang="en" class="bg-gray-50 dark:bg-gray-800 text-gray-900 font-black">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.png" type="image/x-icon" />
     <link href="tailwind/output.css" rel="stylesheet" />
-    <title>My Website</title>
+    <title>Marco Eribes</title>
   </head>
   <body
-    class="bg-green-300 dark:bg-green-900 w-full md:max-w-4xl lg:max-w-6xl mx-auto px-8"
+    class="border border-stone-950 w-full md:max-w-4xl lg:max-w-6xl mx-auto px-8 flex flex-col h-screen"
   >
-    <header class="flex bg-red-300 mt-4 mb-20 justify-between">
-      <h1 class="font-semibold text-5xl">Marco Eribes</h1>
-      <nav>
+    <header class="flex border border-stone-950 mt-4 mb-20 justify-between">
+      <img src="assets/logo.png" alt="me" class="size-20" />
+      <nav class="flex">
+        <img
+          src="assets/english.png"
+          alt="English"
+          style="cursor: pointer"
+          class="size-12"
+        />
         <img
           src="assets/sun.png"
           alt="Sun Image"
           id="toggleDarkMode"
           style="cursor: pointer"
-          class="size-20"
+          class="size-12"
         />
       </nav>
     </header>
     <main>
+      <section class="border border-stone-950">
+        <h1>About Me</h1>
+        <p>Hello World, I'm Marco</p>
+        <p>
+          I am a full stack software engineer who gets the right tools for the
+          job
+        </p>
+      </section>
       <section>
         <h2 class="text-2xl">Find Me</h2>
-        <ul class="flex justify-evenly bg-yellow-300">
+        <ul class="flex justify-evenly border border-stone-950">
           <li class="flex flex-col-reverse">
             <p>Github</p>
-            <img
-              src="assets/github_logo.png"
-              alt="GitHub Logo"
+            <img<!DOCTYPE html>
+            <html
+              lang="en"
+              class="bg-gray-50 dark:bg-gray-800 h-screen text-gray-900 font-black flex justify-center"
+            >
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="icon" href="assets/logo.png" type="image/x-icon" />
+                <link href="tailwind/output.css" rel="stylesheet" />
+                <title>Marco Eribes</title>
+              </head>
+              <body
+                class="border border-stone-950 w-full md:max-w-4xl lg:max-w-6xl mx-auto px-8"
+              >
+                <header class="flex border border-stone-950 mt-4 mb-20 justify-between">
+                  <img src="assets/logo.png" alt="me" class="size-20" />
+                  <nav class="flex">
+                    <img
+                      src="assets/english.png"
+                      alt="English"
+                      style="cursor: pointer"
+                      class="size-12"
+                    />
+                    <img
+                      src="assets/sun.png"
+                      alt="Sun Image"
+                      id="toggleDarkMode"
+                      style="cursor: pointer"
+                      class="size-12"
+                    />
+                  </nav>
+                </header>
+                <main>
+                  <section class="border border-stone-950">
+                    <h1>About Me</h1>
+                    <p>Hello World, I'm Marco</p>
+                    <p>
+                      I am a full stack software engineer who gets the right tools for the
+                      job
+                    </p>
+                  </section>
+                  <section>
+                    <h2 class="text-2xl">Find Me</h2>
+                    <ul class="flex justify-evenly border border-stone-950">
+                      <li class="flex flex-col-reverse">
+                        <p>Github</p>
+                        <img
+                          src="assets/github_logo.png"
+                          alt="GitHub Logo"
+                          class="size-16 object-contain drop-shadow-lg"
+                        />
+                      </li>
+                      <li class="flex flex-col-reverse">
+                        <p>LinkedIn</p>
+                        <img
+                          src="assets/linkedin_logo.png"
+                          alt="LinkedIn Logo"
+                          class="size-16 object-contain drop-shadow-xl"
+                        />
+                      </li>
+                    </ul>
+                  </section>
+                </main>
+                <footer>
+                  <h2>Curious about how I made this site? <a>source</a></h2>
+                </footer>
+              </body>
+              <script src="scripts/darkmode.js" defer></script>
+            </html>
+            
               class="size-16 object-contain drop-shadow-lg"
             />
           </li>
@@ -47,35 +127,9 @@
         </ul>
       </section>
     </main>
+    <footer>
+      <h2>Curious about how I made this site? <a>source</a></h2>
+    </footer>
   </body>
-
-  <script>
-    function toggleDarkMode() {
-      const html = document.documentElement;
-      const isDarkMode = html.classList.toggle("dark");
-      localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-
-      const image = document.getElementById("toggleDarkMode");
-      if (isDarkMode) {
-        image.src = "assets/moon.png"; // Path to moon image
-        image.alt = "Moon Image";
-      } else {
-        image.src = "assets/sun.png"; // Path to sun image
-        image.alt = "Sun Image";
-      }
-    }
-
-    window.onload = () => {
-      const isDarkModeEnabled = localStorage.getItem("darkMode") === "enabled";
-      if (isDarkModeEnabled) {
-        document.documentElement.classList.add("dark");
-      }
-
-      const image = document.getElementById("toggleDarkMode");
-      image.src = isDarkModeEnabled ? "assets/moon.png" : "assets/sun.png"; // Set initial image based on dark mode
-      image.alt = isDarkModeEnabled ? "Moon Image" : "Sun Image";
-
-      image.addEventListener("click", toggleDarkMode);
-    };
-  </script>
+  <script src="scripts/darkmode.js" defer></script>
 </html>

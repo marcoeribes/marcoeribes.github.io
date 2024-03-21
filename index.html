@@ -36,19 +36,35 @@
     </header>
     <main class="flex flex-auto flex-col justify-items-centers gap-10">
       <section class="flex flex-col">
-        <h1 id="intro" class="text-3xl mb-8">
+        <h1 id="intro-en" class="text-3xl mb-8">
           Hello World, <br />
           I'm Marco Villalobos Eribes
         </h1>
-        <p id="bio">
-          I design and build apps <br />
-          Desert dwelling software engineer who designs and builds apps <br />
-          For fun, I love the outdoors like hiking, fishing, and running <br />
-          oh... and programming of course.
+        <h1 id="intro-es" class="text-3xl mb-8 hidden">
+          Hola Mundo, <br />
+          Soy Marco Villalobos Eribes
+        </h1>
+
+        <p id="bio-en">
+          I'm a software engineer who has spent years taming the beast known as
+          the computer through brute force. I also design and build apps. <br />
+          For fun, I enjoy doing anything outdoors like camping, fishing,
+          hiking, and running. <br />
+        </p>
+        <p id="bio-es" class="hidden">
+          Soy un ingeniero de software que ha pasado años domesticando la bestia
+          conocida como la computadora a través de la fuerza bruta. También
+          diseño y construyo aplicaciones. <br />
+          Para divertirme, me gusta hacer cualquier cosa al aire libre como
+          acampar, pescar, correr, y hacer unas caminatas en las montañas.
+          <br />
         </p>
 
         <li class="flex flex-row gap-4 items-center justify-start mt-2">
-          <h3 class="font-semibold">Contact me:</h3>
+          <h3 id="contact-en" class="font-semibold">Want to reach out?</h3>
+          <h3 id="contact-es" class="font-semibold">
+            ¿Quieres hablar conmigo?
+          </h3>
           <a
             href="mailto:contact@marcoeribes.me"
             class="h-8 flex justify-center items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md p-1"
@@ -83,8 +99,8 @@
       </section>
 
       <section class="flex-auto flex-col text-center">
-        <h2 class="text-2xl font-semibold">Projects</h2>
-
+        <h2 id="projects-en" class="text-2xl font-semibold">Projects</h2>
+        <h2 id="projects-es" class="text-2xl font-semibold">Proyectos</h2>
         <ul class="flex flex-row justify-center mt-6 gap-x-24">
           <a
             class="flex flex-col-reverse gap-3 items-center w-36 rounded-full"
@@ -120,12 +136,20 @@
       </section>
     </main>
     <footer class="flex flex-row justify-between gap-8 mt-20 mb-8 text-center">
-      <h2>
+      <h2 id="source-en">
         Curious about how I made this site?
         <a
           class="underline text-blue-600 hover:text-blue-400"
           href="https://github.com/marcoeribes/marcoeribes.github.io"
           >source</a
+        >
+      </h2>
+      <h2 id="source-es">
+        ¿Quieres saber como hice este sitio?
+        <a
+          class="underline text-blue-600 hover:text-blue-400"
+          href="https://github.com/marcoeribes/marcoeribes.github.io"
+          >fuente</a
         >
       </h2>
       <nav class="flex flex-row basis-1/2 gap-2 items-center justify-end">
@@ -157,5 +181,5 @@
     </footer>
   </body>
   <script src="scripts/darkmode.js" defer></script>
-  <script src="scripts/translate.js" defer></script>
+  <script src="scripts/translate.js"></script>
 </html>

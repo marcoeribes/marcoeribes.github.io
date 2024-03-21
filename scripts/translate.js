@@ -1,31 +1,29 @@
-// Translation data
-const translations = {
-  en: {
-    intro: "Hello World, I'm Marco",
-    bio: "I design and build apps",
-    // ... other translations ...
-  },
-  es: {
-    intro: "Hola Mundo, soy Marco",
-    bio: "Diseño y desarrollo aplicaciones",
-    // ... other translations ...
-  },
-};
+function switchLanguage(lang) {
+  const englishElements = document.querySelectorAll('[id$="-en"]');
+  const spanishElements = document.querySelectorAll('[id$="-es"]');
 
-// Function to change language
-function changeLanguage(lang) {
-  for (let key in translations[lang]) {
-    document.getElementById(key).textContent = translations[lang][key];
+  if (lang === "es") {
+    englishElements.forEach((el) => el.classList.add("hidden"));
+    spanishElements.forEach((el) => el.classList.remove("hidden"));
+  } else {
+    englishElements.forEach((el) => el.classList.remove("hidden"));
+    spanishElements.forEach((el) => el.classList.add("hidden"));
   }
 
-  // Update the language attribute in the html tag
   document.documentElement.lang = lang;
+  localStorage.setItem("language", lang === "en" ? "en" : "es");
 }
 
-// Event listeners for language switch
 document
   .getElementById("english-lang")
-  .addEventListener("click", () => changeLanguage("en"));
+  .addEventListener("click", () => switchLanguage("en"));
 document
   .getElementById("spanish-lang")
-  .addEventListener("click", () => changeLanguage("es"));
+  .addEventListener("click", () => switchLanguage("es"));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("language");
+  if (savedLang) {
+    switchLanguage(savedLang);
+  }
+});

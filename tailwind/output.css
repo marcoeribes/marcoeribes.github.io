@@ -779,14 +779,19 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.bg-slate-100 {
+.bg-slate-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 .object-contain {
@@ -842,10 +847,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.font-helvetica {
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .text-2xl {

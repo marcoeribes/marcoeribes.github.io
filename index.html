@@ -6,16 +6,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet Marco Eribes or Marco Villalobos Eribes, a passionate software engineer with year of professional experience with a bachelor of science in computer science. Email Marco Eribes at marcoeribes or contact@marcoeribes.me"
+    />
     <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
     <link href="tailwind/output.css" rel="stylesheet" />
     <title>Marco Eribes</title>
-
+    <script>
+      window.addEventListener("load", function () {
+        document
+          .getElementById("preloader")
+          .classList.add("opacity-0", "pointer-events-none");
+      });
+    </script>
     <script src="scripts/darkmode.js"></script>
-    <script src="scripts/translate.js"></script>
+    <script src="scripts/translate.js" defer></script>
   </head>
   <body
     class="w-full lg:max-w-4xl mx-auto px-8 flex flex-col h-screen border border-t-0 border-b-0 border-gray-200 dark:border-gray-800 max-2xl:border-none"
   >
+    <div id="preloader" class="fixed inset-0 bg-slate-950 z-50"></div>
+
     <header class="flex flex-row mt-4 mb-16 justify-between">
       <img src="assets/logo.webp" alt="me" class="size-20" />
       <nav class="flex flex-row basis-1/2 gap-10 items-center justify-end">
@@ -54,15 +66,15 @@
           <br />
         </p>
 
-        <li
+        <div
           class="flex flex-wrap flex-row gap-4 items-center justify-start mt-6 max-sm:gap-0"
         >
-          <h3 id="contact-en" class="font-semibold max-sm:w-full">
+          <h4 id="contact-en" class="font-semibold max-sm:w-full">
             Want to reach out?
-          </h3>
-          <h3 id="contact-es" class="font-semibold max-sm:w-full hidden">
+          </h4>
+          <h4 id="contact-es" class="font-semibold max-sm:w-full hidden">
             ¿Quieres hablar conmigo?
-          </h3>
+          </h4>
 
           <a
             href="mailto:contact@marcoeribes.me"
@@ -72,7 +84,7 @@
               id="emailIcon"
               class="size-6"
               src="assets/email.svg"
-              alt="email"
+              alt="email icon"
             />
             <p>Email</p>
           </a>
@@ -83,7 +95,7 @@
             <img
               class="w-8 h-8"
               src="assets/linkedin_logo.svg"
-              alt="LinkedIn"
+              alt="LinkedIn logo"
             />
             <p>LinkedIn</p>
           </a>
@@ -91,10 +103,14 @@
             href="https://github.com/marcoeribes"
             class="h-8 flex justify-center items-center hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-1 gap-1"
           >
-            <img class="w-7 h-7" src="assets/github_logo.svg" alt="Github" />
+            <img
+              class="w-7 h-7"
+              src="assets/github_logo.svg"
+              alt="Github logo"
+            />
             <p>GitHub</p>
           </a>
-        </li>
+        </div>
       </section>
 
       <section class="flex-auto flex-col text-center">

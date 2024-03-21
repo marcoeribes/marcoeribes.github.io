@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html
   lang="en"
-  class="font-be-vietnam-pro bg-slate-100 text-black dark:bg-slate-950 dark:text-white text-lg"
+  class="font-sans bg-slate-100 text-black dark:bg-slate-950 dark:text-white text-lg"
 >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/logo.png" type="image/x-icon" />
     <link href="tailwind/output.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap'"
-      rel="stylesheet"
-    />
-
     <title>Marco Eribes</title>
   </head>
   <body
     class="w-full lg:max-w-4xl mx-auto px-8 flex flex-col h-screen border border-t-0 border-b-0 border-gray-200 dark:border-gray-800 max-2xl:border-none"
   >
-    <header class="flex flex-row mt-4 mb-20 justify-between">
+    <header class="flex flex-row mt-4 mb-16 justify-between">
       <img src="assets/logo.png" alt="me" class="size-20" />
       <nav class="flex flex-row basis-1/2 gap-10 items-center justify-end">
         <img
@@ -45,13 +36,13 @@
           Soy Marco Villalobos Eribes
         </h1>
 
-        <p id="bio-en">
+        <p id="bio-en" class="text-justify">
           I'm a software engineer who has spent years taming the beast known as
           the computer through brute force. I also design and build apps. <br />
           For fun, I enjoy doing anything outdoors like camping, fishing,
           hiking, and running. <br />
         </p>
-        <p id="bio-es" class="hidden">
+        <p id="bio-es" class="text-justify hidden">
           Soy un ingeniero de software que ha pasado años domesticando la bestia
           conocida como la computadora a través de la fuerza bruta. También
           diseño y construyo aplicaciones. <br />
@@ -60,11 +51,16 @@
           <br />
         </p>
 
-        <li class="flex flex-row gap-4 items-center justify-start mt-2">
-          <h3 id="contact-en" class="font-semibold">Want to reach out?</h3>
-          <h3 id="contact-es" class="font-semibold">
+        <li
+          class="flex flex-wrap flex-row gap-4 items-center justify-start mt-6 max-sm:gap-0"
+        >
+          <h3 id="contact-en" class="font-semibold max-sm:w-full">
+            Want to reach out?
+          </h3>
+          <h3 id="contact-es" class="font-semibold max-sm:w-full">
             ¿Quieres hablar conmigo?
           </h3>
+
           <a
             href="mailto:contact@marcoeribes.me"
             class="h-8 flex justify-center items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md p-1"
@@ -99,11 +95,13 @@
       </section>
 
       <section class="flex-auto flex-col text-center">
-        <h2 id="projects-en" class="text-2xl font-semibold">Projects</h2>
-        <h2 id="projects-es" class="text-2xl font-semibold">Proyectos</h2>
-        <ul class="flex flex-row justify-center mt-6 gap-x-24">
+        <h2 id="projects-en" class="text-2xl font-medium">Projects</h2>
+        <h2 id="projects-es" class="text-2xl font-medium">Proyectos</h2>
+        <ul
+          class="flex flex-row justify-center items-start mt-6 gap-x-24 max-sm:gap-4"
+        >
           <a
-            class="flex flex-col-reverse gap-3 items-center w-36 rounded-full"
+            class="flex flex-col-reverse gap-3 items-center w-32 rounded-full"
             href="https://www.lightout.app/"
           >
             <h2 class="text-lg">Lightout</h2>
@@ -118,7 +116,7 @@
             </div>
           </a>
           <a
-            class="flex flex-col-reverse gap-3 items-center w-36 rounded-full"
+            class="flex flex-col-reverse gap-3 items-center w-32 rounded-full"
             href="https://cookncollab.com/"
           >
             <h2 class="text-lg">Cook 'n' Collab</h2>
@@ -135,7 +133,9 @@
         </ul>
       </section>
     </main>
-    <footer class="flex flex-row justify-between gap-8 mt-20 mb-8 text-center">
+    <footer
+      class="flex flex-row justify-between gap-8 mt-20 mb-8 text-center max-md:flex-col-reverse max-md:items-center max-md:gap-2 max-sm:text-sm max-sm:mb-10"
+    >
       <h2 id="source-en">
         Curious about how I made this site?
         <a
@@ -152,7 +152,9 @@
           >fuente</a
         >
       </h2>
-      <nav class="flex flex-row basis-1/2 gap-2 items-center justify-end">
+      <nav
+        class="flex flex-row basis-1/3 gap-2 items-center justify-end max-sm:text-base"
+      >
         <div
           id="english-lang"
           class="flex flex-row-reverse gap-2 items-center language-selector hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-2"

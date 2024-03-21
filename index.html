@@ -12,11 +12,15 @@
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap'"
+      rel="stylesheet"
+    />
 
     <title>Marco Eribes</title>
   </head>
   <body
-    class="w-full lg:max-w-4xl mx-auto px-8 flex flex-col h-screen border border-t-0 border-b-0"
+    class="w-full lg:max-w-4xl mx-auto px-8 flex flex-col h-screen border border-t-0 border-b-0 border-gray-200 dark:border-gray-800 max-2xl:border-none"
   >
     <header class="flex flex-row mt-4 mb-20 justify-between">
       <img src="assets/logo.png" alt="me" class="size-20" />
@@ -31,8 +35,8 @@
       </nav>
     </header>
     <main class="flex flex-auto flex-col justify-items-centers gap-10">
-      <section class="flex-auto">
-        <h1 id="intro" class="text-2xl mb-8">
+      <section class="flex flex-col">
+        <h1 id="intro" class="text-3xl mb-8">
           Hello World, <br />
           I'm Marco Villalobos Eribes
         </h1>
@@ -43,18 +47,23 @@
           oh... and programming of course.
         </p>
 
-        <li class="flex flex-row gap-4 items-center justify-start">
-          <p>Contact me:</p>
+        <li class="flex flex-row gap-4 items-center justify-start mt-2">
+          <h3 class="font-semibold">Contact me:</h3>
           <a
             href="mailto:contact@marcoeribes.me"
-            class="h-8 flex justify-center items-center gap-2 hover:bg-slate-300 dark:hover:bg-slate-800 rounded-md p-1"
+            class="h-8 flex justify-center items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md p-1"
           >
-            <img class="size-6" src="assets/email.svg" alt="email" />
+            <img
+              id="emailIcon"
+              class="size-6"
+              src="assets/email.svg"
+              alt="email"
+            />
             <p>Email</p>
           </a>
           <a
             href="https://www.linkedin.com/in/marcoeribes"
-            class="h-8 flex justify-center items-center hover:bg-slate-300 dark:hover:bg-slate-800 rounded-md pr-1"
+            class="h-8 flex justify-center items-center hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md pr-1"
           >
             <img
               class="w-8 h-8"
@@ -65,25 +74,25 @@
           </a>
           <a
             href="https://github.com/marcoeribes"
-            class="h-8 flex justify-center items-center hover:bg-slate-300 dark:hover:bg-slate-800 rounded-md pr-1"
+            class="h-8 flex justify-center items-center hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-1 gap-1"
           >
-            <img class="w-8 h-8" src="assets/github_logo.svg" alt="Github" />
+            <img class="w-7 h-7" src="assets/github_logo.svg" alt="Github" />
             <p>GitHub</p>
           </a>
         </li>
       </section>
 
       <section class="flex-auto flex-col text-center">
-        <h2 class="text-2xl">Projects</h2>
+        <h2 class="text-2xl font-semibold">Projects</h2>
 
         <ul class="flex flex-row justify-center mt-6 gap-x-24">
           <a
-            class="flex flex-col-reverse items-center w-28 rounded-full"
+            class="flex flex-col-reverse gap-3 items-center w-36 rounded-full"
             href="https://www.lightout.app/"
           >
-            <p>Lightout</p>
+            <h2 class="text-lg">Lightout</h2>
             <div
-              class="w-16 h-16 rounded-full dark:bg-white p-2 flex justify-center items-center"
+              class="w-16 h-16 rounded-full dark:bg-[#ffd300] p-2 flex justify-center items-center"
             >
               <img
                 src="assets/lightout_logo.png"
@@ -93,12 +102,12 @@
             </div>
           </a>
           <a
-            class="flex flex-col-reverse items-center w-28 rounded-full"
+            class="flex flex-col-reverse gap-3 items-center w-36 rounded-full"
             href="https://cookncollab.com/"
           >
-            <p>Cook 'n' Collab</p>
+            <h2 class="text-lg">Cook 'n' Collab</h2>
             <div
-              class="w-16 h-16 rounded-full dark:bg-white p-2 flex justify-center items-center"
+              class="w-16 h-16 rounded-full dark:bg-[#ff9a4d] p-2 flex justify-center items-center"
             >
               <img
                 src="assets/cookncollab_logo.png"
@@ -114,15 +123,15 @@
       <h2>
         Curious about how I made this site?
         <a
-          class="underline text-blue-600"
+          class="underline text-blue-600 hover:text-blue-400"
           href="https://github.com/marcoeribes/marcoeribes.github.io"
           >source</a
         >
       </h2>
-      <nav class="flex flex-row basis-1/2 gap-10 items-center justify-end">
+      <nav class="flex flex-row basis-1/2 gap-2 items-center justify-end">
         <div
           id="english-lang"
-          class="flex flex-row-reverse gap-2 items-center language-selector hover:bg-gray-200 dark:hover:bg-slate-800 rounded-md px-2"
+          class="flex flex-row-reverse gap-2 items-center language-selector hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-2"
           style="cursor: pointer"
         >
           <img
@@ -134,7 +143,7 @@
         </div>
         <div
           id="spanish-lang"
-          class="flex flex-row-reverse gap-2 items-center language-selector hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md px-2"
+          class="flex flex-row-reverse gap-2 items-center language-selector hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-2"
           style="cursor: pointer"
         >
           <img

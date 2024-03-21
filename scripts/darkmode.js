@@ -3,13 +3,19 @@ function toggleDarkMode() {
   const isDarkMode = html.classList.toggle("dark");
   localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
 
-  const image = document.getElementById("toggleDarkMode");
+  const modeImage = document.getElementById("toggleDarkMode");
+  const emailImage = document.getElementById("emailIcon"); // Get the email icon element
+
   if (isDarkMode) {
-    image.src = "assets/darkmode/moon.svg"; // Path to moon image
-    image.alt = "Moon Image";
+    modeImage.src = "assets/darkmode/moon.svg";
+    modeImage.alt = "Moon Image";
+
+    emailImage.src = "assets/email_dark.svg"; // Update email icon for dark mode
   } else {
-    image.src = "assets/darkmode/sun.svg"; // Path to sun image
-    image.alt = "Sun Image";
+    modeImage.src = "assets/darkmode/sun.svg";
+    modeImage.alt = "Sun Image";
+
+    emailImage.src = "assets/email.svg"; // Update email icon for light mode
   }
 }
 
@@ -19,11 +25,17 @@ window.onload = () => {
     document.documentElement.classList.add("dark");
   }
 
-  const image = document.getElementById("toggleDarkMode");
-  image.src = isDarkModeEnabled
-    ? "assets/darkmode/moon.svg"
-    : "assets/darkmode/sun.svg"; // Set initial image based on dark mode
-  image.alt = isDarkModeEnabled ? "Moon Image" : "Sun Image";
+  const modeImage = document.getElementById("toggleDarkMode");
+  const emailImage = document.getElementById("emailIcon");
 
-  image.addEventListener("click", toggleDarkMode);
+  modeImage.src = isDarkModeEnabled
+    ? "assets/darkmode/moon.svg"
+    : "assets/darkmode/sun.svg";
+  modeImage.alt = isDarkModeEnabled ? "Dark Mode" : "Light Mode";
+
+  emailImage.src = isDarkModeEnabled
+    ? "assets/email_dark.svg"
+    : "assets/email.svg"; // Set initial email icon
+
+  modeImage.addEventListener("click", toggleDarkMode);
 };

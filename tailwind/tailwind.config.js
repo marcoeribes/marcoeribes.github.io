@@ -4,9 +4,7 @@ module.exports = {
   content: ["../**/*.html"],
   theme: {
     extend: {
-      fontFamily: {
-        oxygen: ["Be Vietnam Pro", "sans-serif"],
-      },
+      fontFamily: { helvetica: ["Helvetica", "Arial", "sans-serif"] },
     },
   },
   plugins: [],

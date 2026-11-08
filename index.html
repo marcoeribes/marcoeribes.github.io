@@ -1,204 +1,176 @@
-<!DOCTYPE html>
-<html
-  lang="en"
-  class="font-sans bg-slate-100 text-black dark:bg-slate-950 dark:text-white text-lg"
->
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Meet Marco Eribes or Marco Villalobos Eribes, a passionate software engineer with year of professional experience with a bachelor of science in computer science. Email Marco Eribes at marcoeribes or contact@marcoeribes.me"
-    />
-    <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
-    <link href="tailwind/output.css" rel="stylesheet" />
-    <title>Marco Eribes</title>
-    <script>
-      window.addEventListener("load", function () {
-        document
-          .getElementById("preloader")
-          .classList.add("opacity-0", "pointer-events-none");
-      });
-    </script>
-    <script src="scripts/darkmode.js"></script>
-    <script src="scripts/translate.js" defer></script>
-  </head>
-  <body
-    class="w-full lg:max-w-4xl mx-auto px-8 flex flex-col h-screen border border-t-0 border-b-0 border-gray-200 dark:border-gray-800 max-2xl:border-none"
-  >
-    <div id="preloader" class="fixed inset-0 bg-slate-950 z-50"></div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Marco Eribes · Software Engineer</title>
+<meta name="description" content="Marco Villalobos Eribes, full stack software engineer. Resume, GitHub, LinkedIn and email.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+<script>
+// Theme: saved choice, otherwise follow the system setting. Runs before paint to avoid a flash.
+(function(){var t;try{t=localStorage.theme}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")})();
+</script>
+<style>
+/* The same alien world in both themes: dark = night, light = day. Text is solid white over the sky in both. */
+:root{--sky:linear-gradient(#03021c,#0d0a5c 55%,#3438a8 78%,#04121c 80%,#020a10);--fg:#fff;--hi:#fff;--dim:#fff;--faint:#fff;--line:rgba(200,225,255,.28);--ac:#7ff6e4;--acr:127,246,228;--sh:rgba(2,6,30,.55)}
+[data-theme=light]{--sky:linear-gradient(#0818a0,#1a5cff 55%,#e8f0ff 79%,#1f6a78 80%,#103a48);--line:rgba(255,255,255,.45);--ac:#b8fff2;--acr:184,255,242;--sh:rgba(6,20,90,.55)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--sky);color:var(--fg);font:400 16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+/* very faint scanlines: the soft glow of a 2001 CRT */
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.5) 0 1px,transparent 1px 3px);opacity:.09;z-index:3}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+main{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px 14vh;text-shadow:0 1px 18px var(--sh),0 0 2px var(--sh)}
+.k{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:#fff;margin-bottom:18px;padding-left:.42em}
+h1{font-weight:200;font-size:clamp(34px,6vw,64px);line-height:1.05;letter-spacing:.01em;color:var(--hi)}
+h1 span{color:var(--ac)}
+.sub{margin:18px auto 40px;color:var(--dim);max-width:28em}
+nav{display:flex;flex-direction:column;align-items:center;gap:2px}
+nav a{position:relative;padding:7px 0 7px .32em;color:var(--fg);text-decoration:none;font-size:clamp(15px,1.9vw,18px);letter-spacing:.32em;text-transform:uppercase;transition:color .25s,text-shadow .25s}
+/* selection: a soft plasma-colored band behind the highlighted item */
+nav a:after{content:"";position:absolute;z-index:-1;left:-46px;right:-46px;top:3px;bottom:3px;background:linear-gradient(90deg,transparent,rgba(var(--acr),.2) 30%,rgba(var(--acr),.2) 70%,transparent);border-top:1px solid rgba(var(--acr),.3);border-bottom:1px solid rgba(var(--acr),.3);opacity:0;transform:scaleX(.6);transition:opacity .25s,transform .25s}
+nav a:before{content:"";position:absolute;right:calc(100% + 18px);top:50%;width:6px;height:6px;margin-top:-3px;transform:rotate(45deg) scale(.4);background:var(--ac);box-shadow:0 0 10px 1px var(--ac);opacity:0;transition:opacity .25s,transform .25s}
+nav small{position:absolute;left:calc(100% + 18px);top:50%;transform:translate(-6px,-50%);white-space:nowrap;font-size:11px;letter-spacing:.14em;text-transform:none;color:var(--dim);opacity:0;transition:opacity .25s,transform .25s}
+nav a:hover,nav a:focus-visible{color:var(--hi);outline:0;text-shadow:0 0 14px rgba(var(--acr),.7),0 1px 18px var(--sh)}
+nav a:hover:after,nav a:focus-visible:after{opacity:1;transform:none}
+nav a:hover:before,nav a:focus-visible:before{opacity:1;transform:rotate(45deg)}
+nav a:hover small,nav a:focus-visible small{opacity:1;transform:translate(0,-50%)}
+footer{position:fixed;z-index:1;left:0;right:0;bottom:24px;display:flex;justify-content:center;gap:28px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);text-shadow:0 1px 8px var(--sh)}
+kbd{font:inherit;border:1px solid var(--line);border-radius:3px;padding:0 5px}
+#t{position:fixed;z-index:4;top:22px;right:22px;width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:rgba(0,0,0,.08);color:var(--dim);cursor:pointer;transition:color .3s,border-color .3s}
+#t:hover,#t:focus-visible{color:var(--ac);border-color:var(--ac);outline:0}
+#t svg{width:16px;height:16px}
+[data-theme=dark] .sun,[data-theme=light] .moon{display:none}
+@media (max-width:600px){nav small{display:none}footer span:last-child{display:none}nav a:after{left:-24px;right:-24px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas>
+<button id="t" type="button" aria-label="Switch between day and night" title="Day / night">
+  <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+</button>
+<main>
+  <p class="k">Software Engineer</p>
+  <h1>Marco Villalobos<br>Eribes<span>.</span></h1>
+  <p class="sub">Full stack developer. I design and build web apps, from the database to the last pixel.</p>
+  <nav aria-label="Main">
+    <a href="/resume/">Resume<small>web · pdf</small></a>
+    <a href="https://github.com/marcoeribes" rel="me">GitHub<small>@marcoeribes</small></a>
+    <a href="https://www.linkedin.com/in/marcoeribes" rel="me">LinkedIn<small>/in/marcoeribes</small></a>
+    <a href="mailto:contact@marcoeribes.me">Email<small>contact@marcoeribes.me</small></a>
+  </nav>
+</main>
+<footer><span>© 2026 Marco Eribes</span><span><kbd>↑</kbd> <kbd>↓</kbd> select · <kbd>↵</kbd> open</span></footer>
+<script>
+// Theme toggle: saves the choice; until then the page follows the system setting live
+(function(){
+  var r=document.documentElement,q=matchMedia("(prefers-color-scheme: light)");
+  function set(t,save){r.dataset.theme=t;if(save)try{localStorage.theme=t}catch(e){}dispatchEvent(new Event("themechange"))}
+  document.getElementById("t").onclick=function(){set(r.dataset.theme=="light"?"dark":"light",1)};
+  q.addEventListener&&q.addEventListener("change",function(){var s;try{s=localStorage.theme}catch(e){}if(!s)set(q.matches?"light":"dark")});
+})();
 
-    <header class="flex flex-row mt-4 mb-16 justify-between">
-      <img src="assets/logo.webp" alt="me" class="size-20" />
-      <nav class="flex flex-row basis-1/2 gap-10 items-center justify-end">
-        <img
-          src="assets/darkmode/sun.svg"
-          alt="Sun Image"
-          id="toggleDarkMode"
-          style="cursor: pointer"
-          class="size-8"
-        />
-      </nav>
-    </header>
-    <main class="flex flex-auto flex-col justify-items-centers gap-10">
-      <section class="flex flex-col">
-        <h1 id="intro-en" class="text-3xl mb-8">
-          Hello World, <br />
-          I'm Marco Villalobos Eribes
-        </h1>
-        <h1 id="intro-es" class="text-3xl mb-8 hidden">
-          Hola Mundo, <br />
-          Soy Marco Villalobos Eribes
-        </h1>
+// Keyboard menu: arrow keys move between links, like a console menu
+(function(){
+  var a=[].slice.call(document.querySelectorAll("nav a"));
+  addEventListener("keydown",function(e){
+    var d=e.key=="ArrowDown"?1:e.key=="ArrowUp"?-1:0;if(!d)return;
+    e.preventDefault();var i=a.indexOf(document.activeElement),n=a.length;
+    a[i<0?(d>0?0:n-1):(i+d+n)%n].focus();
+  });
+})();
 
-        <p id="bio-en" class="text-justify">
-          I'm a software engineer who has spent years taming the beast known as
-          the computer through brute force. I also design and build apps. <br />
-          For fun, I enjoy doing anything outdoors like camping, fishing,
-          hiking, and running. <br />
-        </p>
-        <p id="bio-es" class="text-justify hidden">
-          Soy un ingeniero de software que ha pasado años domesticando la bestia
-          conocida como la computadora a través de la fuerza bruta. También
-          diseño y construyo aplicaciones. <br />
-          Para divertirme, me gusta hacer cualquier cosa al aire libre como
-          acampar, pescar, correr, y hacer unas caminatas en las montañas.
-          <br />
-        </p>
-
-        <div
-          class="flex flex-wrap flex-row gap-4 items-center justify-start mt-6 max-sm:gap-0"
-        >
-          <h4 id="contact-en" class="font-semibold max-sm:w-full">
-            Want to reach out?
-          </h4>
-          <h4 id="contact-es" class="font-semibold max-sm:w-full hidden">
-            ¿Quieres hablar conmigo?
-          </h4>
-
-          <a
-            href="mailto:contact@marcoeribes.me"
-            class="h-8 flex justify-center items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md p-1"
-          >
-            <img
-              id="emailIcon"
-              class="size-6"
-              src="assets/email.svg"
-              alt="email icon"
-            />
-            <p>Email</p>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/marcoeribes"
-            class="h-8 flex justify-center items-center hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md pr-1"
-          >
-            <img
-              class="w-8 h-8"
-              src="assets/linkedin_logo.svg"
-              alt="LinkedIn logo"
-            />
-            <p>LinkedIn</p>
-          </a>
-          <a
-            href="https://github.com/marcoeribes"
-            class="h-8 flex justify-center items-center hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-1 gap-1"
-          >
-            <img
-              class="w-7 h-7"
-              src="assets/github_logo.svg"
-              alt="Github logo"
-            />
-            <p>GitHub</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="flex-auto flex-col text-center">
-        <h2 id="projects-en" class="text-2xl font-medium">Projects</h2>
-        <h2 id="projects-es" class="text-2xl font-medium hidden">Proyectos</h2>
-        <div
-          class="flex flex-row justify-center items-start mt-6 gap-x-24 max-sm:gap-4"
-        >
-          <a
-            class="flex flex-col-reverse gap-3 items-center w-32 rounded-full"
-            href="https://www.lightout.app/"
-          >
-            <h2 class="text-lg">Lightout</h2>
-            <div
-              class="w-16 h-16 rounded-full dark:bg-[#ffd300] p-2 flex justify-center items-center"
-            >
-              <img
-                src="assets/lightout_logo.webp"
-                alt="Lightout Logo"
-                class="size-16 object-contain drop-shadow-lg hover:brightness-75"
-              />
-            </div>
-          </a>
-          <a
-            class="flex flex-col-reverse gap-3 items-center w-32 rounded-full"
-            href="https://cookncollab.com/"
-          >
-            <h2 class="text-lg">Cook 'n' Collab</h2>
-            <div
-              class="w-16 h-16 rounded-full dark:bg-[#ff9a4d] p-2 flex justify-center items-center"
-            >
-              <img
-                src="assets/cookncollab_logo.webp"
-                alt="Cook 'n' Collab Logo"
-                class="size-16 object-contain drop-shadow-xl hover:brightness-75"
-              />
-            </div>
-          </a>
-        </div>
-      </section>
-    </main>
-    <footer
-      class="flex flex-row justify-between gap-8 mt-20 mb-8 text-center max-md:flex-col-reverse max-md:items-center max-md:gap-2 max-sm:text-sm max-sm:mb-10"
-    >
-      <h2 id="source-en">
-        Curious about how I made this site?
-        <a
-          class="underline text-blue-600 hover:text-blue-400"
-          href="https://github.com/marcoeribes/marcoeribes.github.io"
-          >source</a
-        >
-      </h2>
-      <h2 id="source-es" class="hidden">
-        ¿Quieres saber como hice este sitio?
-        <a
-          class="underline text-blue-600 hover:text-blue-400"
-          href="https://github.com/marcoeribes/marcoeribes.github.io"
-          >fuente</a
-        >
-      </h2>
-      <nav
-        class="flex flex-row basis-1/3 gap-2 items-center justify-end max-sm:text-base"
-      >
-        <div
-          id="english-lang"
-          class="flex flex-row-reverse gap-2 items-center language-selector hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-2"
-          style="cursor: pointer"
-        >
-          <img
-            src="assets/international/english.svg"
-            alt="English"
-            class="size-6"
-          />
-          <h3>English</h3>
-        </div>
-        <div
-          id="spanish-lang"
-          class="flex flex-row-reverse gap-2 items-center language-selector hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-2"
-          style="cursor: pointer"
-        >
-          <img
-            src="assets/international/spanish.svg"
-            alt="Español"
-            class="size-6"
-          />
-          <h3>Español</h3>
-        </div>
-      </nav>
-    </footer>
-  </body>
+// An abstract alien world, painted per pixel by one hand-written shader:
+// ultramarine sky, a vast pale planet, a small white sun with lens flare, drifting plasma ribbons,
+// distant light beams on the horizon, a rippling sea reflecting it all, and floating motes.
+// Uniform D blends night (0, dark theme) to day (1, light theme); everything else is the same scene.
+(function(){
+  var c=document.getElementById("c"),g=c.getContext("webgl",{antialias:false,alpha:false});
+  if(!g)return;
+  var fs=[
+  "precision highp float;uniform vec2 R,M;uniform float t,D;",
+  "const float HZ=-.3;",
+  "float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}",
+  "float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+1.),f.x),f.y);}",
+  "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}",
+  // horizon color, shared by sky, haze and fog
+  "vec3 hor(){return mix(vec3(.2,.22,.66),vec3(.9,.94,1.),D);}",
+  // sky without sun/planet/stars (also used for the sea reflection)
+  "vec3 sky(vec2 q,float a){float y=q.y-HZ;",
+  " vec3 top=mix(vec3(.012,.01,.1),vec3(.03,.07,.6),D),mid=mix(vec3(.05,.04,.36),vec3(.1,.34,1.),D);",
+  " vec3 c=mix(hor(),mid,smoothstep(0.,.24,y));c=mix(c,top,smoothstep(.2,.9,y));",
+  " c+=mix(vec3(.3,.4,.95),vec3(1.),D)*exp(-abs(y)*55.)*(.35+.3*D);",
+  // plasma ribbons: slow curtains of teal and violet light
+  " for(int i=0;i<3;i++){float fi=float(i);",
+  "  float y0=.24+.12*fi+.05*sin(q.x*1.6+t*.06+fi*2.1)+.07*(fbm(vec2(q.x*1.2+fi*3.,t*.025))-.5);",
+  "  float b=exp(-pow((y-y0)*(13.-fi*3.),2.));",
+  "  float cur=.35+.9*fbm(vec2(q.x*6.+fi*10.,y*1.5-t*.04));",
+  "  vec3 col=mix(vec3(.02,1.,.78),vec3(.72,.22,1.),fi*.5);",
+  "  c+=col*b*cur*mix(.34,.17,D)*smoothstep(0.,.06,y);}",
+  // distant beams of light rising from the horizon
+  " for(int i=0;i<3;i++){float fi=float(i);float px=(fi==0.?.36:fi==1.?.42:-.62)*a;",
+  "  float w=.0035+.003*fi;float pl=exp(-pow((q.x-px)/w,2.))*exp(-max(y,0.)*5.5)*(.75+.25*sin(t*.5+fi*2.));",
+  "  pl+=exp(-pow((q.x-px)/(w*9.),2.))*exp(-max(y,0.)*9.)*.35;",
+  "  c+=mix(vec3(.05,1.,.9),vec3(.75,.35,1.),fi==1.?1.:0.)*pl*mix(1.05,.55,D);}",
+  " return c;}",
+  "void main(){vec2 uv=gl_FragCoord.xy/R;float a=R.x/R.y;vec2 q=(gl_FragCoord.xy-.5*R)/R.y+M*vec2(.035,.015);vec3 c;",
+  " vec2 S=vec2(.2*a,.26);float sunI=mix(.35,1.,D);",
+  " if(q.y>HZ){float y=q.y-HZ;c=sky(q,a);",
+  // stars, stronger at night
+  "  vec2 sc=floor(q*vec2(260.));float r=h(sc);c+=vec3(.85,.9,1.)*step(.9965,r)*(.55+.45*sin(t*1.3+r*90.))*(1.-.85*D)*smoothstep(.04,.35,y);",
+  // the planet: a vast pale world in the corner with soft violet bands and a glowing rim
+  "  vec2 C=vec2(-.52*a,.62);float PR=.36+.08*min(a,1.6);vec2 dp=q-C;float d=length(dp)/PR;",
+  "  vec3 L=normalize(vec3(S-C,.55));",
+  "  if(d<1.){vec3 N=vec3(dp/PR,sqrt(1.-d*d));float lit=clamp(dot(N,L)*1.1+.15,0.,1.);",
+  "   float bb=fbm(vec2(dp.y/PR*5.5+fbm(dp*2.5+t*.004)*.9,dp.x/PR*.7));",
+  "   vec3 pc=mix(vec3(.42,.22,.9),vec3(1.,.78,1.),bb)*(.06+.8*lit*lit+.4*D);",
+  "   pc+=vec3(.6,.35,1.)*pow(1.-N.z,3.)*.7;pc=mix(pc,c,.2+.08*D);",
+  "   c=mix(c,pc,smoothstep(1.,.975,d));}",
+  "  c+=vec3(.6,.38,1.)*exp(-max(d-1.,0.)*14.)*smoothstep(.975,1.,d)*mix(.45,.3,D);",
+  // the sun: small, white, with a soft bloom and a few faint flare rings toward the center
+  "  float ds=length(q-S);c+=vec3(1.)*(smoothstep(.024,.019,ds)+exp(-ds*13.)*.55+exp(-ds*40.)*.6)*sunI;",
+  "  for(int k=0;k<3;k++){float fk=float(k);vec2 G=S+(vec2(0.,.02)-S)*(.55+fk*.38);float rk=.028+fk*.03;float dg=length(q-G);",
+  "   c+=mix(vec3(.3,1.,.85),vec3(.7,.7,1.),fk*.5)*(exp(-pow((dg-rk)/.003,2.))*.08+smoothstep(rk,rk*.4,dg)*.04)*sunI*D;}",
+  " }else{",
+  // the sea: ripples distort a mirrored sky, fading into haze at the horizon
+  "  float dy=HZ-q.y,z=1./(dy+.025);vec2 rp=vec2(q.x*z*.55,z*1.1-t*.22);float w=fbm(rp)-.5;",
+  "  vec3 refl=sky(vec2(q.x+w*dy*.25,HZ+dy+w*.045),a);",
+  "  vec3 sea=mix(vec3(.004,.03,.06),vec3(.06,.32,.4),D);",
+  "  c=mix(sea,refl,mix(.85,.4,smoothstep(0.,.3,dy)));",
+  "  float gl=exp(-pow((q.x-S.x)/(.015+dy*.35),2.))*pow(n(rp*vec2(3.,1.5)),5.)*2.;c+=vec3(1.,.97,.9)*gl*sunI*(.35+.65*D);",
+  "  c=mix(c,hor(),exp(-dy*16.)*.75);}",
+  // floating motes of plasma light
+  " for(int l=0;l<2;l++){float fl=float(l);vec2 gq=q*(7.+fl*5.)+vec2(fl*3.,t*(.05+fl*.03));vec2 id=floor(gq),f=fract(gq)-.5;",
+  "  vec2 o=vec2(h(id),h(id+3.1))-.5;float m=smoothstep(.07,0.,length(f-o*.7))*step(.8,h(id+7.7))*(.5+.5*sin(t*.8+h(id)*40.));",
+  "  c+=mix(vec3(.15,1.,.85),vec3(.8,.4,1.),h(id+9.))*m*mix(.6,.35,D);}",
+  // more vibrant: a gentle saturation boost, then vignette and dither
+  " c=max(mix(vec3(dot(c,vec3(.3,.59,.11))),c,1.25),0.);",
+  " c*=1.-.45*pow(length(uv-.5)*1.25,2.5);",
+  " c+=(h(gl_FragCoord.xy+t)-.5)/200.;",
+  " gl_FragColor=vec4(c,1.);}"].join("\n");
+  function sh(type,src){var s=g.createShader(type);g.shaderSource(s,src);g.compileShader(s);return s}
+  var p=g.createProgram();g.attachShader(p,sh(g.VERTEX_SHADER,"attribute vec2 v;void main(){gl_Position=vec4(v,0,1);}"));g.attachShader(p,sh(g.FRAGMENT_SHADER,fs));g.linkProgram(p);g.useProgram(p);
+  var b=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,b);g.bufferData(g.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),g.STATIC_DRAW);
+  g.enableVertexAttribArray(0);g.vertexAttribPointer(0,2,g.FLOAT,false,0,0);
+  function U(n){return g.getUniformLocation(p,n)}
+  var uR=U("R"),uM=U("M"),uT=U("t"),uD=U("D");
+  var still=matchMedia("(prefers-reduced-motion: reduce)").matches,mx=0,my=0,tx=0,ty=0,D=0,TD=0,t0=performance.now()-2e4;
+  // render at reduced resolution: soft and cheap, like the era's hardware
+  var S=.5;
+  function size(){c.width=Math.ceil(innerWidth*S);c.height=Math.ceil(innerHeight*S);g.viewport(0,0,c.width,c.height);if(still)draw(30)}
+  function theme(){TD=document.documentElement.dataset.theme=="light"?1:0;if(still){D=TD;draw(30)}}
+  function draw(t){g.uniform2f(uR,c.width,c.height);g.uniform2f(uM,mx,my);g.uniform1f(uT,t);g.uniform1f(uD,D);g.drawArrays(g.TRIANGLES,0,3)}
+  function loop(n){mx+=(tx-mx)*.03;my+=(ty-my)*.03;D+=(TD-D)*.04;draw((n-t0)/1e3);requestAnimationFrame(loop)}
+  addEventListener("resize",size);
+  addEventListener("themechange",theme);
+  addEventListener("pointermove",function(e){tx=e.clientX/innerWidth-.5;ty=-(e.clientY/innerHeight-.5)});
+  TD=document.documentElement.dataset.theme=="light"?1:0;D=TD;size();
+  if(!still)requestAnimationFrame(loop);else draw(30);
+})();
+</script>
+</body>
 </html>

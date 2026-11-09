@@ -343,7 +343,7 @@
         connect my world.
       </p>
       <nav aria-label="Main">
-        <a href="/resume/">Resume<small>web · pdf</small></a>
+        <a href="/resume/" data-resume>Resume<small>pdf</small></a>
         <a href="https://github.com/marcoeribes" rel="me"
           >GitHub<small>@marcoeribes</small></a
         >
@@ -383,6 +383,31 @@
             } catch (e) {}
             if (!s) set(q.matches ? "light" : "dark");
           });
+      })();
+
+      // Resume: always generated from resume/index.html. Clicking loads that page in a hidden frame
+      // and opens the browser's print dialog, where "Save as PDF" turns the HTML into the PDF.
+      // No PDF file is stored or deployed. Without JavaScript the link simply opens the resume page.
+      (function () {
+        var a = document.querySelector("nav a[data-resume]"),
+          f;
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (f) f.remove();
+          f = document.createElement("iframe");
+          f.setAttribute("aria-hidden", "true");
+          f.tabIndex = -1;
+          f.style.cssText =
+            "position:fixed;left:-10000px;top:0;width:816px;height:1056px;border:0";
+          f.src = a.getAttribute("href");
+          f.onload = function () {
+            var w = f.contentWindow;
+            w.document.title = "Marco-Eribes-Resume"; // suggested PDF file name
+            w.focus();
+            w.print();
+          };
+          document.body.appendChild(f);
+        });
       })();
 
       // Keyboard menu: arrow keys move between links, like a console menu
